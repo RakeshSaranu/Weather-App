@@ -16,6 +16,7 @@ async function Weatherreport(cityname)
         document.querySelector(".error").style.display="block";
         document.querySelector(".weather").style.display="none";
      }
+
      else{
     var op= await res.json();
 
@@ -30,6 +31,8 @@ async function Weatherreport(cityname)
      {
           image.src="./images/clouds.png";
      }
+
+
 
      else if(op.weather[0].main=="Clear")
      {
@@ -57,11 +60,14 @@ async function Weatherreport(cityname)
      }
 
      document.querySelector(".weather").style.display="block";
+     
      document.querySelector(".error").style.display="none";
 
      }
 }
 
-btn.addEventListener("click",()=>{
+btn.addEventListener("click",()=>
+
+{
     Weatherreport(search.value)
 })
